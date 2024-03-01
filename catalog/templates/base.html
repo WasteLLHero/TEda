@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static "css/output.css" %}">
+        <script defer type="text/javascript" src="{% static "js/main.js" %}"></script>
+        {% block title %}<title>ТЕда</title>{% endblock %}
+    </head>
+
+    <body class="bg-secondary flex flex-col h-screen h-full min-height-[100vh]">
+
+        {% include "inc/header.html" %}
+
+        <main class="grow">
+
+            {% block content %}{% endblock %}
+
+            {% include "inc/paginator.html" %}
+
+        </main>
+
+        <footer>
+
+            {% block footer %}{% endblock %}
+
+        </footer>
+
+    </body>
+</html>
